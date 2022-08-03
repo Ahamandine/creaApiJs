@@ -100,3 +100,42 @@ var patchCategory = function(event) {
 }
 
 patchButton.addEventListener("click",patchCategory);
+
+
+// FUNCTION UPDATE ARTICLE
+
+var updateButton    = document.querySelector("#updateButton");
+var articleTitle    = document.querySelector("#articleTitle");
+var articleAuthor   = document.querySelector("#articleAuthor");
+
+var updateArticle = function(event) {
+    var requestBody = {
+        "title": articleTitle.value,
+        // Possibilité de mettre +sieurs élèments à la suite
+        "writer": articleAuthor.value
+
+    };
+    fetch("https://127.0.0.1:8000/api/articles/409", {
+        method: "PUT",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestBody)
+    }).then(function (response) {
+        return response.json()
+    })
+    .then(function (responseJSON) {
+        var resultDiv = document.createElement("div");
+        if (responseJSON["@type"] == "hydra:Error") {
+            console.log("Une erreur est survenue : " + responseJSON["hydra:description"])
+            resultDiv.innerHTML = "Une erreur est survenue";
+        }
+        else {
+            console.log(responseJSON)
+            resultDiv.innerHTML = "Article mis à jour";
+        }
+        document.body.appendChild(resultDiv);
+    })
+}
+
+updateButton.addEventListener("click",updateArticle);

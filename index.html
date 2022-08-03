@@ -10,15 +10,48 @@
 </head>
 <body>
     <div id="formulaire">
-        <h1>Nouvelle catégorie</h1>
-        <label for="">Nom de la nouvelle catégorie</label><input id="categoryName" type="text">
-        <button id="createButton">Créer une catégorie</button>
+        
+        <h1>Faites vos modifications</h1>
 
-        <label for="">Nom de l'article</label><input type="text" id="articleId">
-        <button id="deleteButton">Supprimer un article</button>
+        <h2>Catégories</h2>
 
-        <label for="">Catégorie à mettre à jour</label><input type="text" id="categoryUpdate">
-        <button id="patchButton">Mettre à jour</button>
+        <div id="categoryMod">
+
+            
+                <div id="createCategory">
+                    <label for="">Nom de la nouvelle catégorie :</label><input id="categoryName" type="text" placeholder="entrez le nouveau nom">
+                    <button id="createButton">Créer une catégorie</button>
+                </div>
+                
+                <div id="patchCategory"> 
+                    <label for="">Catégorie à mettre à jour :</label><input type="text" id="categoryUpdate" placeholder="changer le nom">
+                    <button id="patchButton">Mettre à jour</button>
+                </div>
+            
+        </div>
+        
+        <h2>Articles</h2>
+
+        <div id="articleMod">
+
+        
+            <div id="updateArticle">
+                <label for="">Titre de l'article :</label><input type="text" id="articleTitle" placeholder="titre de l'article">
+                <label for="">Auteur de l'article :</label><input type="text" id="articleAuthor" placeholder="auteur de l'article">
+                <!-- <label for="">Titre de l'article :</label><input type="text" id="articleTitle" placeholder="titre de l'article"> -->
+                <button id="updateButton">Mettre à jour l'article</button>
+            </div>
+
+            <div id="deleteArticle"> 
+                <label for="">Id de l'article :</label><input type="text" id="articleId" placeholder="id de l'article">
+                <button id="deleteButton">Supprimer un article</button>
+            </div>
+
+
+
+        </div>
+        
+        
     </div>
     
 </body>

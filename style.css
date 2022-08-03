@@ -14,10 +14,27 @@ body {
     margin: 5rem;
     padding:5rem;
     background-color:grey;
-    color:rgb(136, 223, 194);
+    color:rgb(222, 232, 136);
+
+    /* text-shadow: 0 0 10px black; */
+    /* -webkit-text-stroke: 1px white; */
+}
+h1 {
+    -webkit-text-stroke: 1px rgb(246, 238, 238);
+    font-size:xx-large;
+    letter-spacing: 5px;
+    word-spacing:2px;
+    font-weight:900;
+    text-align:center;
+    font-variant: small-caps;
+    color: lightblue;
 }
 
-h2,
+h2 {
+    text-align:center;
+}
+
+h1,
 label,
 input,
 button {
@@ -27,4 +44,19 @@ button {
 
 label {
     text-align:center;
+}
+
+#categoryMod,
+#articleMod {
+    display:flex;
+    flex-direction: row;
+}
+
+#createCategory,
+#patchCategory,
+#deleteArticle,
+#updateArticle {
+    display:flex;
+    flex-direction: column;
+    margin: 3rem;
 }
